@@ -1,0 +1,6 @@
+# exclude everything
+/*
+# except
+!/plugin
+!.zshrc
+!.gitignore
