@@ -52,7 +52,7 @@ bindkey '^e' edit-command-line
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.settings/dircolors/.dircolors && eval "$(dircolors -b ~/.settings/dircolors/.dircolors)" || eval "$(dircolors -b)"
+    test -r ~/.zsh/.dircolors && eval "$(dircolors -b ~/.zsh/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls -v --color=auto --group-directories-first'
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
