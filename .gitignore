@@ -3,4 +3,5 @@
 # except
 !/plugin
 !.zshrc
+!.dircolors
 !.gitignore
