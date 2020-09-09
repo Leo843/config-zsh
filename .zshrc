@@ -13,7 +13,7 @@ HISTFILE=~/.zsh/history
 autoload -U compinit
 zstyle ':completion:*' menu select
 zmodload zsh/complist
-compinit -D -d ~/.zsh/compdump
+compinit -d ~/.zsh/compdump
 _comp_options+=(globdots)		# Include hidden files.
 
 # vi mode
@@ -76,3 +76,6 @@ alias copy='xclip -sel clip'
 
 # Load zsh-syntax-highlighting; should be last.
 source $HOME/.settings/zsh/plugin/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
+
+# setup fzf configuraton for zsh
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
