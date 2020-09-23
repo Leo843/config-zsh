@@ -76,6 +76,8 @@ alias la='ls -A'
 alias l='ls -CF'
 # pipe command output to clipboard
 alias copy='xclip -sel clip'
+# exit alias for fast exit
+alias q='exit'
 
 # Load zsh-syntax-highlighting; should be last.
 source $HOME/.settings/zsh/plugin/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
