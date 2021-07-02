@@ -80,6 +80,10 @@ alias copy='xclip -sel clip'
 alias q='exit'
 # fast shortcut for overused command
 alias v='vim'
+# list current dir after cd
+function cd () {
+  builtin cd "$@" && ls
+}
 
 # setup fzf configuraton for zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
