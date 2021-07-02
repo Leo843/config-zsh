@@ -83,5 +83,4 @@ alias q='exit'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Load zsh-syntax-highlighting; should be last.
-source $HOME/.settings/zsh/plugin/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
-
+source $HOME/.zsh/plugin/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
