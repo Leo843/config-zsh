@@ -78,6 +78,8 @@ alias l='ls -CF'
 alias copy='xclip -sel clip'
 # exit alias for fast exit
 alias q='exit'
+# fast shortcut for overused command
+alias v='vim'
 
 # setup fzf configuraton for zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
