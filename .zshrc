@@ -88,5 +88,8 @@ function cd () {
 # setup fzf configuraton for zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# setup gcloud cli
+[ -f ~/.zsh/gcloudrc ] && source ~/.zsh/gcloudrc
+
 # Load zsh-syntax-highlighting; should be last.
 source $HOME/.zsh/plugin/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
