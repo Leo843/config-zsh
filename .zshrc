@@ -2,6 +2,8 @@
 
 # set library path
 export LD_LIBRARY_PATH=~/.local/lib
+# set path
+export PATH=$PATH:$HOME/.local/bin
 
 # Enable colors and change prompt:
 autoload -U colors && colors
