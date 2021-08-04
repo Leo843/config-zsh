@@ -87,6 +87,9 @@ function cd () {
   builtin cd "$@" && ll
 }
 
+# run http-server in current dicrectory
+alias http-server=docker run --rm -it -p 8080:8080 -v $(pwd):/public danjellz/http-server
+
 # setup fzf configuraton for zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
