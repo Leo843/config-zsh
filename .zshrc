@@ -90,6 +90,9 @@ function cd () {
 # run http-server in current dicrectory
 alias http-server=docker run --rm -it -p 8080:8080 -v $(pwd):/public danjellz/http-server
 
+# run grip in current directory
+alias markdown-server=docker run --rm -it -p 8082:8080 -v $(pwd):/data --user root mbentley/grip 0.0.0.0:8080
+
 # setup fzf configuraton for zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
