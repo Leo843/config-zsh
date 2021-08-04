@@ -84,7 +84,7 @@ alias q='exit'
 alias v='vim'
 # list current dir after cd
 function cd () {
-  builtin cd "$@" && ls
+  builtin cd "$@" && ll
 }
 
 # setup fzf configuraton for zsh
