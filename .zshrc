@@ -58,42 +58,13 @@ zle -N history-beginning-search-forward-end history-search-end
 bindkey "^p" history-beginning-search-backward-end
 bindkey "^n" history-beginning-search-forward-end
 
-# Load aliases and shortcuts if existent.
-# [ -f "$HOME/.config/shortcutrc" ] && source "$HOME/.config/shortcutrc"
-# [ -f "$HOME/.zsh/alias" ] && source "$HOME/.config/aliasrc"
-
-# enable color support of ls and also add handy aliases
+# load colors
 if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.zsh/.dircolors && eval "$(dircolors -b ~/.zsh/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls -v --color=auto --group-directories-first'
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
-else
-    alias ls='ls -v --group-directories-first'
+  test -r ~/.zsh/.dircolors && eval "$(dircolors -b ~/.zsh/.dircolors)" || eval "$(dircolors -b)"
 fi
-# some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-# pipe command output to clipboard
-alias copy='xclip -sel clip'
-# exit alias for fast exit
-alias q='exit'
-# fast shortcut for overused command
-alias v='vim'
-# list current dir after cd
-function cd () {
-  builtin cd "$@" && ll
-}
 
-# run http-server in current dicrectory
-# option `-p 8081` to use port 8081 instead of 8080 (default)
-# option `-c-1` to disable caching
-alias http-server='docker run --rm -it -p 8081:8081 -v $(pwd):/public danjellz/http-server http-server -p 8081 -c-1'
-
-# run grip in current directory
-alias markdown-server='docker run --rm -it -p 8082:8082 -v $(pwd):/data --user root mbentley/grip 0.0.0.0:8082'
+# load aliases
+[ -f ~/.zsh/alias.zsh ] && source ~/.zsh/alias.zsh
 
 # setup fzf configuraton for zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

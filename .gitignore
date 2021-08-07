@@ -3,5 +3,6 @@
 # except
 !/plugin
 !.zshrc
+!alias.zsh
 !.dircolors
 !.gitignore
