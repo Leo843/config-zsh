@@ -34,3 +34,16 @@ alias http-server='docker run --rm -it -p 8081:8081 -v $(pwd):/public danjellz/h
 # run grip in current directory
 alias markdown-server='docker run --rm -it -p 8082:8082 -v $(pwd):/data --user root mbentley/grip 0.0.0.0:8082'
 
+# connect to hammer with several ports forwarded
+alias ssh-hammer='ssh \
+  -L 8080:hammer:8080 \
+  -L 8081:hammer:8081 \
+  -L 8082:hammer:8082 \
+  -L 8083:hammer:8083 \
+  -L 8084:hammer:8084 \
+  -L 4200:hammer:4200 \
+  -L 4201:hammer:4201 \
+  -L 4202:hammer:4202 \
+  -L 4203:hammer:4203 \
+  -L 4204:hammer:4204 \
+  leo@hammer'
