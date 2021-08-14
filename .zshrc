@@ -72,5 +72,8 @@ fi
 # setup gcloud cli
 [ -f ~/.zsh/gcloudrc ] && source ~/.zsh/gcloudrc
 
+# enable DOCKER_BUILDKIT
+export DOCKER_BUILDKIT=1
+
 # Load zsh-syntax-highlighting; should be last.
 source $HOME/.zsh/plugin/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
