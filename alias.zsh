@@ -46,4 +46,9 @@ alias ssh-hammer='ssh \
   -L 4202:hammer:4202 \
   -L 4203:hammer:4203 \
   -L 4204:hammer:4204 \
+  -L 3000:hammer:3000 \
+  -L 3001:hammer:3001 \
+  -L 3002:hammer:3002 \
+  -L 3003:hammer:3003 \
+  -L 3004:hammer:3004 \
   leo@hammer'
