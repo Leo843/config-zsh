@@ -53,6 +53,7 @@ alias ssh-hammer='ssh \
   -L 3004:hammer:3004 \
   leo@hammer'
 
-alias kubeautocomplete='source <(kubectl completion zsh)'
+# WARNING: The 'sed' version from busybox does not behave well with the script.
+alias kcomplete='source <(kubectl completion zsh)'
 
 alias k='kubectl'
