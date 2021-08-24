@@ -72,6 +72,9 @@ fi
 # setup gcloud cli
 [ -f ~/.zsh/gcloudrc ] && source ~/.zsh/gcloudrc
 
+# setup kubectl (disable because of loading time)
+# if which kubectl 1> /dev/null; then source <(kubectl completion zsh); fi
+
 # enable DOCKER_BUILDKIT
 export DOCKER_BUILDKIT=1
 

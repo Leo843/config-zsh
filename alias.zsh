@@ -52,3 +52,7 @@ alias ssh-hammer='ssh \
   -L 3003:hammer:3003 \
   -L 3004:hammer:3004 \
   leo@hammer'
+
+alias kubeautocomplete='source <(kubectl completion zsh)'
+
+alias k='kubectl'
