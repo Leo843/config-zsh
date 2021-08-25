@@ -57,3 +57,5 @@ alias ssh-hammer='ssh \
 alias kcomplete='source <(kubectl completion zsh)'
 
 alias k='kubectl'
+
+alias tf='terraform'
