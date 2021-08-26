@@ -7,7 +7,17 @@ export PATH=$PATH:$HOME/.local/bin
 
 # Enable colors and change prompt:
 autoload -U colors && colors
-PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
+# allow expressions within PS1 to be evaluated
+setopt PROMPT_SUBST
+# generate a branch tag for the promt
+function parse_git_branch() {
+  local RED='\%\{\$fg\[red\]\%\}'
+  local CYAN='\%\{\$fg\[cyan\]\%\}'
+  local SUBSTITUTION="s/^\(.*\)$/$RED\($CYAN\1$RED\)/p"
+  git rev-parse --abbrev-ref HEAD 2>/dev/null | sed -n -e $SUBSTITUTION
+}
+# prompt definition
+PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]$(parse_git_branch)%{$reset_color%}$%b "
 
 # history configuration
 HISTSIZE=10000
