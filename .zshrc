@@ -5,6 +5,11 @@ export LD_LIBRARY_PATH=~/.local/lib
 # set path
 export PATH=$PATH:$HOME/.local/bin
 
+# add Pulumi to the PATH
+# The above comment is looked by pulumi install script to prevent adding the
+# binary dir multiple times to PATH.
+[ -d ~/.pulumi ] && PATH=$PATH:$HOME/.pulumi/bin
+
 # Enable colors and change prompt:
 autoload -U colors && colors
 # allow expressions within PS1 to be evaluated
