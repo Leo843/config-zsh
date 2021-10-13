@@ -26,6 +26,11 @@ function cd () {
   builtin cd "$@" && ll
 }
 
+# convert a plantuml file to svg
+function pu2svg () {
+  cat $1 | docker run --rm -i think/plantuml
+}
+
 # run http-server in current dicrectory
 # - option `-p 8081` to use port 8081 instead of 8080 (default)
 # - option `-c-1` to disable caching
