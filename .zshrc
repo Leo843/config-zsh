@@ -95,6 +95,11 @@ fi
 # WARNING: The 'sed' version from busybox does not behave well with the script.
 # if which kubectl 1> /dev/null; then source <(kubectl completion zsh); fi
 
+# setup nvm (node version manager)
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
 # enable DOCKER_BUILDKIT
 export DOCKER_BUILDKIT=1
 
