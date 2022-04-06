@@ -40,7 +40,7 @@ alias http-server='docker run --rm -it -p 8081:8081 -v $(pwd):/public danjellz/h
 alias markdown-server='docker run --rm -it -p 8082:8082 -v $(pwd):/data --user root mbentley/grip 0.0.0.0:8082'
 
 # connect to hammer with several ports forwarded
-alias ssh-hammer='ssh \
+alias ssh-hammer='ssh -i ~/.ssh/hammer \
   -L 8080:hammer:8080 \
   -L 8081:hammer:8081 \
   -L 8082:hammer:8082 \
