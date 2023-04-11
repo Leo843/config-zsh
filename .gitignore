@@ -2,6 +2,7 @@
 /*
 # except
 !/plugin
+!/extensions
 !.zshrc
 !alias.zsh
 !.dircolors
