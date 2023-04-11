@@ -5,16 +5,13 @@ export LD_LIBRARY_PATH=~/.local/lib
 # set path
 export PATH=$PATH:$HOME/.local/bin
 
-# add Pulumi to the PATH
-# The above comment is looked by pulumi install script to prevent adding the
-# binary dir multiple times to PATH.
-[ -d ~/.pulumi ] && PATH=$PATH:$HOME/.pulumi/bin
-
-# Enable colors and change prompt:
+# enable colors and change prompt:
 autoload -U colors && colors
+
 # allow expressions within PS1 to be evaluated
 setopt PROMPT_SUBST
-# generate a branch tag for the promt
+
+# generate a branch tag for the prompt
 function parse_git_branch() {
   local BRANCH_NAME=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
   if [ -z "$BRANCH_NAME" ]; then
@@ -25,6 +22,7 @@ function parse_git_branch() {
     echo "${RED}(${CYAN}${BRANCH_NAME}${RED})"
   fi
 }
+
 # prompt definition
 PS1='%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]$(parse_git_branch)%{$reset_color%}$%b '
 
@@ -33,25 +31,25 @@ HISTSIZE=10000
 SAVEHIST=10000
 HISTFILE=~/.zsh/history
 
-# Basic auto/tab complete:
+# basic auto/tab complete:
 autoload -U compinit
 zstyle ':completion:*' menu select
 zmodload zsh/complist
 compinit -d ~/.zsh/compdump
-_comp_options+=(globdots)		# Include hidden files.
+_comp_options+=(globdots)
 
 # vi mode
 bindkey -v
 export KEYTIMEOUT=1
 
-# Use vim keys in tab complete menu:
+# use vim keys in tab complete menu:
 bindkey -M menuselect 'h' vi-backward-char
 bindkey -M menuselect 'k' vi-up-line-or-history
 bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -v '^?' backward-delete-char
 
-# Change cursor shape for different vi modes.
+# change cursor shape for different vi modes.
 function zle-keymap-select {
   case ${KEYMAP} in
     vicmd) echo -ne '\e[1 q' ;;
@@ -66,7 +64,7 @@ zle-line-init() {
 zle -N zle-keymap-select
 zle -N zle-line-init
 
-# Edit line in vim with ctrl-e:
+# edit line in vim with ctrl-e:
 autoload edit-command-line; zle -N edit-command-line
 bindkey '^e' edit-command-line
 
