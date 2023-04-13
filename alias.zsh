@@ -19,7 +19,7 @@ alias copy='xclip -sel clip'
 alias q='exit'
 
 # fast vim
-alias v='vim'
+alias v='nvim'
 
 # ll right after cd
 function cd () {
