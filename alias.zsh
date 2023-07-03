@@ -27,5 +27,5 @@ function cd () {
 }
 
 alias k='kubectl'
-
 alias tf='terraform'
+alias d='docker'
