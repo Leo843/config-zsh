@@ -1,16 +1,15 @@
-# enable colors
-if [ -x /usr/bin/dircolors ]; then
-  alias ls='ls -v --color=auto --group-directories-first'
-  alias grep='grep --color=auto'
-  alias fgrep='fgrep --color=auto'
-  alias egrep='egrep --color=auto'
-else
-  alias ls='ls -v --group-directories-first'
-fi
-
 # list aliases
-alias ll='ls -alF'
-alias l='ll'
+alias ls='ls --all --color=auto --group-directories-first'
+alias l='ls -l'
+
+# exa
+alias exa='exa --color=automatic --all --sort=Name --group-directories-first'
+alias e='exa --long'
+
+# grep
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
 
 # pipe command output to clipboard
 alias copy='xclip -sel clip'
@@ -21,10 +20,16 @@ alias q='exit'
 # fast vim
 alias v='nvim'
 
-# ll right after cd
-function cd () {
-  builtin cd "$@" && ll
-}
+# list content after cd
+if [[ "$(exa > /dev/null 2>&1; echo $?)" = "0" ]]; then
+  function cd () {
+    builtin cd "$@" && exa
+  }
+else
+  function cd () {
+    builtin cd "$@" && ls
+  }
+fi
 
 alias k='kubectl'
 alias tf='terraform'
