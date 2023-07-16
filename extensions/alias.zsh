@@ -31,6 +31,7 @@ else
   }
 fi
 
+# shortcuts
 alias k='kubectl'
 alias tf='terraform'
 alias d='docker'
