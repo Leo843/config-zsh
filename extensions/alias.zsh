@@ -1,11 +1,14 @@
 #!/usr/bin/env zsh
 
-# list aliases
+# ls
 alias ls='ls --all --color=auto --group-directories-first'
 alias l='ls -l'
+
 # exa
-alias exa='exa --all --all --color=automatic --sort=Name --group-directories-first'
-alias e='exa --long'
+if type exa > /dev/null; then
+  alias exa='exa --all --all --color=automatic --sort=Name --group-directories-first'
+  alias e='exa --long'
+fi
 
 # grep
 alias grep='grep --color=auto'
@@ -13,7 +16,9 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
 # pipe command output to clipboard
-alias copy='xclip -sel clip'
+if type xclip > /dev/null; then
+  alias copy='xclip -sel clip'
+fi
 
 # fast exit
 alias q='exit'
@@ -22,7 +27,7 @@ alias q='exit'
 alias v='nvim'
 
 # list content after cd
-if [[ "$(exa > /dev/null 2>&1; echo $?)" = "0" ]]; then
+if type exa > /dev/null; then
   function cd () {
     builtin cd "$@" && exa
   }
@@ -33,9 +38,15 @@ else
 fi
 
 # shortcuts
-alias k='kubectl'
-alias tf='terraform'
-alias d='docker'
+if type kubectl > /dev/null; then
+  alias k='kubectl'
+fi
+if type terraform > /dev/null; then
+  alias tf='terraform'
+fi
+if type docker > /dev/null; then
+  alias d='docker'
+fi
 
 # keyboard layouts
 alias nocaps='setxkbmap -option "ctrl:nocaps"'
