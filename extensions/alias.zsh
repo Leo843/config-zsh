@@ -3,9 +3,8 @@
 # list aliases
 alias ls='ls --all --color=auto --group-directories-first'
 alias l='ls -l'
-
 # exa
-alias exa='exa --color=automatic --all --sort=Name --group-directories-first'
+alias exa='exa --all --all --color=automatic --sort=Name --group-directories-first'
 alias e='exa --long'
 
 # grep
@@ -37,3 +36,8 @@ fi
 alias k='kubectl'
 alias tf='terraform'
 alias d='docker'
+
+# keyboard layouts
+alias nocaps='setxkbmap -option "ctrl:nocaps"'
+alias qwer='setxkbmap fr'
+alias azer='setxkbmap us'
