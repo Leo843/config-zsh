@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 # enable colors and change prompt:
 autoload -U colors && colors
 

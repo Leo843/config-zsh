@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 # basic auto/tab complete:
 autoload -U compinit
 zstyle ':completion:*' menu select

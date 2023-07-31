@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 # list aliases
 alias ls='ls --all --color=auto --group-directories-first'
 alias l='ls -l'

@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 # vi mode
 bindkey -v
 export KEYTIMEOUT=1
