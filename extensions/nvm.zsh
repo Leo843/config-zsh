@@ -2,5 +2,19 @@
 
 # setup nvm (node version manager)
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# use lazy loading to speed up zsh launch
+lazy_load_nvm() {
+  unset -f node nvm
+  [[ -s "$NVM_DIR/nvm.sh" ]] && source "$NVM_DIR/nvm.sh"
+}
+
+node() {
+  lazy_load_nvm
+  node $@
+}
+
+nvm() {
+  lazy_load_nvm
+  node $@
+}
