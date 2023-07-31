@@ -1,32 +1,19 @@
 #!/usr/bin/env zsh
 
-get_extensions_dir() {
-  local DIR
+# Store the path to the directory for zsh configuration files for later use.
+ROOT_ZSH=~/.config/zsh
 
-  DIR=~/.zsh/extensions
-  if [[ -d "$DIR" ]]; then
-    echo "$DIR"
-    exit 0
-  fi
-
-  DIR=~/.config/zsh/extensions
-  if [[ -d "$DIR" ]]; then
-    echo "$DIR"
-    exit 0
-  fi
-
+# Abort zsh configuration when the configuration file is not at the expected
+# location.
+if [[ ! -f "$ROOT_ZSH/.zshrc" ]]; then
+  echo "ERROR .zshrc must be located at $ROOT_ZSH/.zshrc"
   exit 1
-}
-
-EXTENSIONS_DIR=$(get_extensions_dir)
-if [[ $? ]]; then
-  # load extensions
-  for file in "$EXTENSIONS_DIR"/*; do
-    source "$file"
-  done
-else
-  echo "WARNING No extensions directory found! No extensions loaded!"
 fi
+
+# load extensions
+for file in "$ROOT_ZSH/extensions/"*; do
+  source "$file"
+done
 
 # Load zsh-syntax-highlighting; should be last.
 source $HOME/.zsh/plugin/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
