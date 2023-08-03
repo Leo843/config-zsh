@@ -67,9 +67,9 @@ kp ()
   # process under the cursor (if no processes are selected). Press [escape] to
   # exit.
 
-  ps -ef                                  \
-  | sed 1d                                \
-  | fzf --multi --header='[kill:process]' \
-  | awk '{print $2}'                      \
-  | xargs --no-run-if-empty kill -${1:-9}
-}
+  ps -ef                                    \
+    | sed 1d                                \
+    | fzf --multi --header='[kill:process]' \
+    | awk '{print $2}'                      \
+    | xargs --no-run-if-empty kill -${1:-9}
+  }
