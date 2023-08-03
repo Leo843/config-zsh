@@ -58,3 +58,18 @@ alias azer='setxkbmap us'
 
 # find and open files
 alias ff='rg --files | fzf --preview="bat --color=always --plain --line-range :200 {}" | xargs -r ${EDITOR:-vi}'
+
+# [k]ill [p]rocesses
+kp ()
+{
+  # Show the output of "ps -ef". Use [tab] to select one or multiple processes
+  # and press [enter] to kill all selected processes. Press [enter] to kill the
+  # process under the cursor (if no processes are selected). Press [escape] to
+  # exit.
+
+  ps -ef                                  \
+  | sed 1d                                \
+  | fzf --multi --header='[kill:process]' \
+  | awk '{print $2}'                      \
+  | xargs --no-run-if-empty kill -${1:-9}
+}
