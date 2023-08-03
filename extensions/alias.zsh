@@ -56,8 +56,13 @@ alias nocaps='setxkbmap -option "ctrl:nocaps"'
 alias qwer='setxkbmap fr'
 alias azer='setxkbmap us'
 
-# find and open files
-alias ff='rg --files | fzf --preview="bat --color=always --plain --line-range :200 {}" | xargs -r ${EDITOR:-vi}'
+# [f]ind and open [f]iles
+ff ()
+{
+  rg --files                                                          \
+    | fzf --preview="bat --color=always --plain --line-range :200 {}" \
+    | xargs -r ${EDITOR:-vi}
+}
 
 # [k]ill [p]rocesses
 kp ()
