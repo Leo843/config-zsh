@@ -59,8 +59,10 @@ alias azer='setxkbmap us'
 # [f]ind and open [f]iles
 ff ()
 {
-  rg --files                                                          \
-    | fzf --preview="bat --color=always --plain --line-range :200 {}" \
+  local preview_cmd="bat --color=always --plain --line-range :200 {}"
+
+  rg --files --hidden                           \
+    | fzf --preview="$preview_cmd" \
     | xargs -r ${EDITOR:-vi}
 }
 
