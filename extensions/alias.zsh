@@ -2,7 +2,7 @@
 
 # ls
 alias ls='ls --all --color=auto --group-directories-first'
-alias l='ls -l'
+alias  l='ls -l'
 
 # apg
 alias randpass='apg -n 1'
@@ -10,18 +10,16 @@ alias randpass='apg -n 1'
 # exa
 if type exa > /dev/null; then
   alias exa='exa --all --all --color=automatic --sort=Name --group-directories-first'
-  alias e='exa --long'
+  alias   e='exa --long'
 fi
 
 # grep
-alias grep='grep --color=auto'
+alias  grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
 # pipe command output to clipboard
-if type xclip > /dev/null; then
-  alias copy='xclip -sel clip'
-fi
+type xclip > /dev/null && alias copy='xclip -sel clip'
 
 # fast exit
 alias q='exit'
@@ -31,27 +29,21 @@ alias v='nvim'
 
 # list content after cd
 if type exa > /dev/null; then
-  function cd () {
+  cd () {
     builtin cd "$@" && exa
   }
 else
-  function cd () {
+  cd () {
     builtin cd "$@" && ls
   }
 fi
 
 # shortcuts
-if type kubectl > /dev/null; then
-  alias k='kubectl'
-fi
-if type terraform > /dev/null; then
-  alias tf='terraform'
-fi
-if type docker > /dev/null; then
-  alias d='docker'
-fi
+type kubectl   > /dev/null && alias  k='kubectl'
+type terraform > /dev/null && alias tf='terraform'
+type docker    > /dev/null && alias  d='docker'
 
 # keyboard layouts
 alias nocaps='setxkbmap -option "ctrl:nocaps"'
-alias qwer='setxkbmap fr'
-alias azer='setxkbmap us'
+alias   qwer='setxkbmap fr'
+alias   azer='setxkbmap us'
