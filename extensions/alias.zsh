@@ -11,9 +11,7 @@ if type exa > /dev/null; then
 fi
 
 # grep
-alias  grep='grep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
+alias grep='grep --color=auto'
 
 # pipe command output to clipboard
 type xclip > /dev/null && alias copy='xclip -sel clip'
