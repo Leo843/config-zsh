@@ -4,9 +4,6 @@
 alias ls='ls --all --color=auto --group-directories-first'
 alias  l='ls -l'
 
-# apg
-alias randpass='apg -n 1'
-
 # exa
 if type exa > /dev/null; then
   alias exa='exa --all --all --color=automatic --sort=Name --group-directories-first'
