@@ -3,6 +3,9 @@
 # Disable wildcard character '?'
 set +o nomatch
 
+# Allow '#' to start comment anywhere like in bash
+setopt interactivecomments
+
 # Path to local binaries managed by the user.
 USER_BIN=~/.local/bin
 export PATH=${PATH:+${PATH}:}$USER_BIN
