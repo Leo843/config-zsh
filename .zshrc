@@ -1,5 +1,8 @@
 #!/usr/bin/env zsh
 
+# Disable wildcard character '?'
+set +o nomatch
+
 # Path to local binaries managed by the user.
 USER_BIN=~/.local/bin
 export PATH=${PATH:+${PATH}:}$USER_BIN
